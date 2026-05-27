@@ -748,10 +748,144 @@
 
   footer {
     text-align: center;
-    padding: 32px;
+    padding: 32px 16px;
     color: var(--text3);
     font-size: 13px;
     border-top: 1px solid var(--border);
+  }
+
+  /* ══════════════════════════════════════
+     MOBILE RESPONSIVE — comprehensive fix
+     ══════════════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* Topbar */
+    .topbar {
+      padding: 0 16px;
+      height: auto;
+      min-height: 52px;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    .topbar .badge { display: none; }
+    .topbar .badge:first-of-type { display: inline-flex; }
+
+    /* Tab switcher */
+    .tab-switcher-wrap { padding: 20px 16px 0; }
+    .tab-btn { padding: 8px 14px; font-size: 13px; }
+
+    /* Content area */
+    .content-area { padding: 24px 16px 100px; }
+
+    /* Hero */
+    .hero { padding: 32px 0 28px; margin-bottom: 32px; }
+    .hero h1 { font-size: 28px; letter-spacing: -1px; }
+    .hero p { font-size: 15px; }
+    .hero-badges { gap: 6px; }
+
+    /* All multi-column grids → single column */
+    .grid-2, .grid-3, .grid-4,
+    .tier-grid, .legal-grid, .infra-grid,
+    .two-col { grid-template-columns: 1fr !important; }
+
+    /* Stats — 2 columns on mobile */
+    .grid-4 { grid-template-columns: 1fr 1fr !important; }
+    .stat-num { font-size: 28px; }
+
+    /* Fragmentation bar chart */
+    .frag-bar { padding: 20px 16px; }
+    .platform-row { gap: 8px; }
+    .bar-count { display: none; }
+    .platform-name { width: 70px; font-size: 12px; }
+
+    /* Section label */
+    .section-label { font-size: 10px; margin-bottom: 12px; }
+
+    h2 { font-size: 18px; }
+    h3 { font-size: 14px; }
+
+    /* Cards */
+    .card { padding: 16px; }
+    .card-icon { width: 32px; height: 32px; font-size: 15px; margin-bottom: 10px; }
+
+    /* Architecture diagram — scroll horizontally */
+    .arch-diagram {
+      padding: 20px 12px;
+      overflow-x: auto;
+    }
+    .arch-layer { flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .arch-box { min-width: 90px; font-size: 11px; padding: 8px 10px; }
+
+    /* Dedup pipeline — vertical stack on mobile */
+    .pipeline { flex-direction: column; }
+    .pipeline-step {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 16px;
+    }
+    .pipeline-step:last-child { border-bottom: none; }
+    .pipeline-step::after {
+      content: '↓';
+      right: auto;
+      top: auto;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Code blocks */
+    .code-block pre { font-size: 11px; padding: 14px; }
+    .code-block-header { padding: 8px 12px; }
+    .code-file { font-size: 11px; }
+
+    /* Stack pills */
+    .stack-pill { font-size: 12px; padding: 5px 11px; }
+
+    /* DB schema table — make it scroll */
+    .schema-table { font-size: 11px; }
+    .schema-table th, .schema-table td { padding: 6px 8px; }
+    .col-name, .col-type { font-size: 11px; }
+
+    /* API endpoint list */
+    .endpoint-row { flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
+    .endpoint-desc { display: none; }
+    .endpoint-path { font-size: 12px; }
+
+    /* Infra cards */
+    .infra-card { padding: 12px; }
+    .infra-name { font-size: 12.5px; }
+    .infra-desc { font-size: 11.5px; }
+
+    /* Tier cards */
+    .tier-card { padding: 20px; }
+    .tier-price { font-size: 24px; }
+
+    /* Legal grid */
+    .legal-card { padding: 16px; }
+
+    /* Timeline */
+    .timeline { padding-left: 20px; }
+    .timeline-tasks { gap: 5px; }
+    .task-chip { font-size: 11px; }
+
+    /* Highlight box */
+    .highlight-box { padding: 16px; }
+    .highlight-box p { font-size: 13px; }
+
+    /* Floating page switcher — move up slightly on mobile */
+    div[style*="position:fixed;bottom:28px"] {
+      bottom: 16px !important;
+      font-size: 12px !important;
+    }
+  }
+
+  /* Extra small screens */
+  @media (max-width: 420px) {
+    .hero h1 { font-size: 24px; }
+    .tab-btn { padding: 7px 12px; font-size: 12.5px; gap: 5px; }
+    .grid-4 { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>

@@ -13,7 +13,7 @@
    ================================================================ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1e293b;background:#f8fafc;line-height:1.6;overflow-x:hidden}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1e293b;background:#f8fafc;line-height:1.6;overflow-x:hidden;padding-bottom:80px}
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
 input,select,textarea{font-family:inherit;outline:none}
@@ -380,6 +380,7 @@ img{max-width:100%;display:block}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:var(--gray-400)}
 .made-in-india{display:flex;align-items:center;gap:6px}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:24px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 
 /* ================================================================
    TOAST
